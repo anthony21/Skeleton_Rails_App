@@ -5,3 +5,5 @@
 <% if @user %> 
 Logged in as: <%= @user.email %> 
 <% end %>
+
+<%= button_to "Logout", logout_path, method: :delete %>
