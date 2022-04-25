@@ -25,7 +25,17 @@
     </div>
 
   </div>
-  <%= link_to "sign_in", sign_in_path, class: "btn btn-success" %>
-  <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
-
+  <div>
+   <ul class="navbar-nav">
+    <% if Current.user %>
+     <li class="navbar-item">
+      <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+     </li>
+     <% else %> 
+      <li class="navbar-item">
+       <%= link_to "Login", sign_in_path, class: "btn btn-success" %>
+      </li>
+    <% end %> 
+   </ul>
+  </div>
 </nav>

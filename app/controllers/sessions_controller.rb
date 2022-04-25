@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def destroy 
-        if @user.present?
+        if Current.user.present?
          session[:user_id] = nil 
          redirect_to root_path, notice: "Logged Out"
         else
